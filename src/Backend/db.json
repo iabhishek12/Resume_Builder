@@ -1,0 +1,41 @@
+{
+  "users": [
+    
+    {
+      "id": "5d4f",
+      "username": "abhishek",
+      "email": "abhisheksingh04it@gmail.com",
+      "password": "Abhi#",
+      "confirmPassword": "Abhi#",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "address": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "completeAddress": ""
+      },
+      "contact": "",
+      "dob": "",
+      "gender": "",
+      "resume": {
+        "linkedIn": "",
+        "gitHub": "",
+        "profile": "",
+        "expereince": [],
+        "projects": [],
+        "certificates": [],
+        "education": {
+          "degree": "",
+          "secondary": "",
+          "primary": "",
+          "diploma": ""
+        },
+        "skills": [],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
+    }
+  ]
+}
