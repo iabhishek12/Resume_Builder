@@ -13,7 +13,7 @@ const AuthMenu = () => {
         {isAuth!=null || window.localStorage.getItem("USERTOKEN") ? 
         <>
           <li>
-            <NavLink to={"/user_profile"}> <img className="h-[50px] w-[50px] mr-4"  src={isAuth?.userImage} alt="" /> </NavLink>
+            <NavLink to={"/user_profile"}> <img className="h-[50px] w-[50px] rounded-full mr-4"  src={isAuth?.userImage} alt="" /> </NavLink>
           </li>
           
           <li>

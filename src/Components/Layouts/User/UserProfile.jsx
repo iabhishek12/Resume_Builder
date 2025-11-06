@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AUTHCONTEXTAPI } from "../../../Context/AuthContext";
 import { LuBadgeDollarSign } from "react-icons/lu";
-
+import { NavLink } from "react-router-dom";
+import COMPLETEPROFILEICON from '../../../Assets/Icons/completeProfiil.png'
 const UserProfile = () => {
   let { isAuth } = useContext(AUTHCONTEXTAPI);
   let [isSbcribed, setIsSubScribe] = useState(true);
@@ -20,9 +21,12 @@ const UserProfile = () => {
             <span>{isAuth?.email}</span>
           </div>
 
-          <div className="flex flex-col text-white relative " onClick={()=>setIsSubScribe(!isSbcribed)}>
+          <div
+            className="flex flex-col text-white relative "
+            onClick={() => setIsSubScribe(!isSbcribed)}
+          >
             {isSbcribed ? (
-              <span  className="h-[60px] w-[60px] bg-white absolute rounded-full right-[-10px] top-[-12px]  flex justify-center items-center text-[50px] transition-all duration-200">
+              <span className="h-[60px] w-[60px] bg-white absolute rounded-full right-[-10px] top-[-12px]  flex justify-center items-center text-[50px] transition-all duration-200">
                 <LuBadgeDollarSign className="text-blue-600" />
               </span>
             ) : (
@@ -30,17 +34,38 @@ const UserProfile = () => {
                 <LuBadgeDollarSign className="text-blue-600" />
               </span>
             )}
-            
+
             {/* ?   */}
 
-            {isSbcribed? <span className="w-[200px]  rounded-2xl bg-white text-black font-semibold text-center py-1">
-              Subscribed
-            </span>:<span className="w-[200px]  rounded-2xl bg-white text-black font-semibold text-center py-1">
-              Subscribe
-            </span>}
+            {isSbcribed ? (
+              <span className="w-[200px]  rounded-2xl bg-white text-black font-semibold text-center py-1">
+                Subscribed
+              </span>
+            ) : (
+              <span className="w-[200px]  rounded-2xl bg-white text-black font-semibold text-center py-1">
+                Subscribe
+              </span>
+            )}
           </div>
         </header>
-        <footer></footer>
+        <footer>
+            {isAuth?.contact != "" ? (
+            <div>User details</div>
+          ) : (
+            <div className="h-full w-full flex flex-col items-center">
+              <header>
+                <img src={COMPLETEPROFILEICON} className="h-[250px]" alt="" />
+              </header>
+              <footer>
+                <NavLink to={"user_profile_update"}>
+                  <button className="bg-blue-600 cursor-pointer text-white py-1 px-4 rounded-lg">
+                    Complete Profile
+                  </button>
+                </NavLink>
+              </footer>
+            </div>
+          )}
+        </footer>
       </article>
     </section>
   );

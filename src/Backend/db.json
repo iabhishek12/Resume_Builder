@@ -1,6 +1,5 @@
 {
   "users": [
-    
     {
       "id": "5d4f",
       "username": "abhishek",
@@ -8,7 +7,7 @@
       "password": "Abhi#",
       "confirmPassword": "Abhi#",
       "isSubscribe": false,
-      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "userImage": "blob:http://localhost:5173/1fb831a8-e7b0-4c0a-a321-92fa211e20bb",
       "address": {
         "city": "",
         "state": "",
