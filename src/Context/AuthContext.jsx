@@ -22,7 +22,6 @@ const AuthContext = ({ children }) => {
   useEffect(() => {
     let tokenid = window.localStorage.getItem("USERTOKEN");
     if (tokenid) {
-      console.log("user token", tokenid);
       let myUser = allUsers.find((user) => {
         return user.id == tokenid;
       });
@@ -60,9 +59,11 @@ const AuthContext = ({ children }) => {
 
     if (!myUser) {
       toast.error("User not found");
-      return;
+      console.log("login not");
+      return false;
     }
     if (myUser.password == payload.password) {
+      console.log("login fiund");
       toast.success("Logged in successfully");
       setIsAuth(myUser);
       window.localStorage.setItem("USERTOKEN", myUser.id);
@@ -81,7 +82,6 @@ const AuthContext = ({ children }) => {
   let genrateOTP = () => {
     return Math.trunc(Math.random() * 8999) + 1000;
   };
- 
 
   return (
     <AUTHCONTEXTAPI.Provider
@@ -95,6 +95,8 @@ const AuthContext = ({ children }) => {
         genrateOTP,
         genratedOtp,
         setGenratedOtp,
+        getAllUsersFromDb,
+        setIsAuth,
       }}
     >
       {children}

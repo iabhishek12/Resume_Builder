@@ -237,7 +237,7 @@ const UserProfileUpdate = () => {
                           type="radio"
                           name="gender"
                           value={g}
-                          checked={profile.gender === g || isAuth.gender == g}
+                          checked={profile.gender === g || isAuth?.gender === g}
                           onChange={handleInputChange}
                         />
                         {g}
@@ -296,7 +296,7 @@ const UserProfileUpdate = () => {
                   placeholder="Enter highest degree"
                   value={
                     profile.resume.education.degree ||
-                    isAuth.resume.education.degree
+                    isAuth?.resume?.education?.degree
                   }
                   onChange={handleEducationChange}
                 />
@@ -306,7 +306,7 @@ const UserProfileUpdate = () => {
                   placeholder="Enter percentage"
                   value={
                     profile.resume.education.degpercentage ||
-                    isAuth.resume.education.degpercentage
+                    isAuth?.resume?.education?.degpercentage
                   }
                   onChange={handleEducationChange}
                 />
@@ -316,7 +316,7 @@ const UserProfileUpdate = () => {
                   placeholder="Enter YOP"
                   value={
                     profile.resume.education.degreeyop ||
-                    isAuth?.resume.education.degreeyop
+                    isAuth?.resume?.education?.degreeyop
                   }
                   onChange={handleEducationChange}
                 />
@@ -326,7 +326,7 @@ const UserProfileUpdate = () => {
                   placeholder="Enter college name"
                   value={
                     profile.resume.education.college ||
-                    isAuth?.resume.education.college
+                    isAuth?.resume?.education?.college
                   }
                   onChange={handleEducationChange}
                 />

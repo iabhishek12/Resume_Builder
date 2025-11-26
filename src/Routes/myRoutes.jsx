@@ -11,9 +11,11 @@ import MainUserLayout from "../Components/Layouts/User/MainUserLayout";
 import UserProfile from "../Components/Layouts/User/UserProfile";
 import UserProfileUpdate from "../Components/Layouts/User/UserProfileUpdate";
 import UserProfilePictureUpdate from "../Components/Layouts/User/UserProfilePictureUpdate";
-import UserPasswordUpdate from "../Components/Layouts/User/NewPassword";
+
 import UserDeleteAccount from "../Components/Layouts/User/UserDeleteAccount";
 import OTPValidation from "../Components/AuthComponents/OTPValidation";
+import AdminLayout from "../Components/Layouts/Admin/AdminLayout";
+// import TemplateEditor from "../Components/TemplatesComponent/TemplateEditor";
 
 let MYROUTES = createBrowserRouter([
   {
@@ -64,12 +66,12 @@ let MYROUTES = createBrowserRouter([
         element: <UserProfileUpdate />,
       },
       {
-        path: "update_prodile_picture",
+        path: "update_profile_picture",
         element: <UserProfilePictureUpdate />,
       },
       {
         path: "update_user_password",
-        element: <UserPasswordUpdate />,
+        element: <ResetPassword />,
       },
       {
         path: "delete_user_account",
@@ -77,6 +79,37 @@ let MYROUTES = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: "Admin dashboard",
+      },
+      {
+        path: "all_users",
+        element: "all users",
+      },
+      {
+        path: "all_transactions",
+        element: "all transactions",
+      },
+      {
+        path: "all_blocked_users",
+        element: "all Blocked Users",
+      },
+      {
+        path: "all_templates",
+        element: "all Templates",
+      },
+    ],
+  },
+  // {
+  //   path: "/edit_template/:id",
+  //   element: <TemplateEditor />,
+  // },
   { path: "*", element: <PageNotFound /> },
 ]);
 
