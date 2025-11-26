@@ -11,7 +11,7 @@ import MainUserLayout from "../Components/Layouts/User/MainUserLayout";
 import UserProfile from "../Components/Layouts/User/UserProfile";
 import UserProfileUpdate from "../Components/Layouts/User/UserProfileUpdate";
 import UserProfilePictureUpdate from "../Components/Layouts/User/UserProfilePictureUpdate";
-import UserPasswordUpdate from "../Components/Layouts/User/UserPasswordUpdate";
+import UserPasswordUpdate from "../Components/Layouts/User/NewPassword";
 import UserDeleteAccount from "../Components/Layouts/User/UserDeleteAccount";
 import OTPValidation from "../Components/AuthComponents/OTPValidation";
 
