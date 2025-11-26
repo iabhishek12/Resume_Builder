@@ -1,12 +1,17 @@
-import React from 'react'
-import { useContext } from 'react';
-import { useState } from 'react';
-import { AUTHCONTEXTAPI } from '../../../Context/AuthContext';
-import { USERCONTEXTAPI } from '../../../Context/UserContext';
+import React from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { AUTHCONTEXTAPI } from "../../../Context/AuthContext";
+import { USERCONTEXTAPI } from "../../../Context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const UserProfilePictureUpdate = () => {
-    let { isAuth } = useContext(AUTHCONTEXTAPI);
+  let navigate = useNavigate();
+  let { isAuth } = useContext(AUTHCONTEXTAPI);
   let [previewImage, setPreviewImage] = useState(null);
+  let [ProfilePictureFile, setProfilePictureFile] = useState(null);
 
   let { updateProfilePicture } = useContext(USERCONTEXTAPI);
 
@@ -14,17 +19,37 @@ const UserProfilePictureUpdate = () => {
     let imageFile = e.target.files[0];
     if (imageFile) {
       let url = URL.createObjectURL(imageFile);
+      setProfilePictureFile(imageFile);
       setPreviewImage(url);
     }
   };
 
-  let handleSubmit = (e) => {
+  let handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit function");
-    updateProfilePicture({ userImage: previewImage });
+
+    try {
+      let formData = new FormData();
+
+      formData.append("file", ProfilePictureFile);
+      formData.append("upload_preset", "resume_builder");
+      formData.append("cloud_name", "dnjhjtdgk");
+
+      let { data } = await axios.post(
+        "https://api.cloudinary.com/v1_1/dnjhjtdgk/image/upload",
+        formData
+      );
+
+      updateProfilePicture({ userImage: data?.url });
+
+      toast.success("Image uploaded Successfully");
+
+      navigate("/user_profile");
+    } catch (err) {
+      toast.error("Image not Uploaded");
+    }
   };
   return (
-   <section>
+    <section>
       <article className="h-[520px] w-[410px] bg-white rounded-lg flex flex-col justify-between items-center py-6">
         <header>
           <h1 className="text-center text-[20px] font-semibold">
@@ -63,7 +88,7 @@ const UserProfilePictureUpdate = () => {
         </footer>
       </article>
     </section>
-  )
-}
+  );
+};
 
-export default UserProfilePictureUpdate
+export default UserProfilePictureUpdate;

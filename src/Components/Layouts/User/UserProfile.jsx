@@ -10,9 +10,9 @@ const UserProfile = () => {
     <section>
       <article className="h-[450px] w-[750px] bg-white rounded-lg">
         <header className="h-[120px] w-[100%] bg-blue-600 rounded-t-lg  relative px-4 flex items-center justify-between">
-          <div className="h-[125px] w-[125px] animate-bounce rounded-[50%] bg-white absolute top-[-50px] left-[calc(50%-62px)]">
+          <div className="h-[125px] w-[125px]  rounded-[50%] bg-white absolute top-[-50px] left-[calc(50%-62px)]">
             <picture>
-              <img src={isAuth?.userImage} alt="" />
+              <img src={isAuth?.userImage} className="rounded-full h-full w-full" alt="" />
             </picture>
           </div>
 

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FormBlock from '../../../Utilities/FormBlock';
 
 const UserProfileUpdate = () => {
+  let [currentPage, setCurrentPage] = useState(1);
    let initialProfileState = {
     username: "",
     email: "",

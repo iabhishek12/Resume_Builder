@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AUTHCONTEXTAPI } from "../../Context/AuthContext";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const Login = () => {
   let navigate = useNavigate();
 
   let { login } = useContext(AUTHCONTEXTAPI);
+  let [isVisible, setIsvisible] = useState(false);
 
   let initialLoginState = {
     email: "",
@@ -52,15 +54,22 @@ const Login = () => {
                 value={email}
               />
             </div>
-            <div className="flex gap-1 flex-col">
+            <div className="flex gap-1 flex-col relative">
               <label htmlFor="">Password</label>
               <input
-                type="text"
+                type={isVisible ? "text" : "password"}
                 className=" px-2 border-2 text-black w-[100%] py-[7px] rounded-[7px] outline-none border-[#eee]"
                 name="password"
                 value={password}
                 onChange={handleInputChange}
               />
+
+              <span
+                onClick={() => setIsvisible(!isVisible)}
+                className="absolute right-4 top-10 cursor-pointer"
+              >
+                {isVisible ? <IoEyeOff /> : <IoEye />}
+              </span>
             </div>
 
             <div>

@@ -7,7 +7,7 @@
       "password": "Abhi#",
       "confirmPassword": "Abhi#",
       "isSubscribe": false,
-      "userImage": "blob:http://localhost:5173/1fb831a8-e7b0-4c0a-a321-92fa211e20bb",
+      "userImage": "http://res.cloudinary.com/dnjhjtdgk/image/upload/v1762697736/vqvkcnuvqn0mh9hfmg5f.png",
       "address": {
         "city": "",
         "state": "",
@@ -35,6 +35,69 @@
         "achievements": []
       },
       "oath": ""
+    },
+    {
+      "id": "a4ab",
+      "username": "abhiiii",
+      "email": "abhi@gmail.com",
+      "password": "A123",
+      "confirmPassword": "A123",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "address": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "completeAddress": ""
+      },
+      "contact": "",
+      "dob": "",
+      "gender": "",
+      "resume": {
+        "linkedIn": "",
+        "gitHub": "",
+        "profile": "",
+        "expereince": [],
+        "projects": [],
+        "certificates": [],
+        "education": {
+          "degree": "",
+          "secondary": "",
+          "primary": "",
+          "diploma": ""
+        },
+        "skills": [],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
+    }
+  ],
+   "blockedUsers": [],
+  "All_templates": [
+    {
+      "id": "1",
+      "template": " FreeImgTemplate1 ",
+      "isPaid": false,
+      "thumbnail": "https://i.ibb.co/kVFSPCxg/Free-Img-Tempalte1.png"
+    },
+    {
+      "id": "2",
+      "template": "FreeTextTemplate2 ",
+      "isPaid": false,
+      "thumbnail": "https://i.ibb.co/FqNg5wdb/Free-Texttemplate2.png"
+    },
+    {
+      "id": "3",
+      "template": "PaidImgTemplate3 ",
+      "isPaid": true,
+      "thumbnail": "https://i.ibb.co/Vc4XQwKz/Paid-Imgtemplate3.png"
+    },
+    {
+      "id": "4",
+      "template": "PaidTextTemplate4 ",
+      "isPaid": true,
+      "thumbnail": "https://i.ibb.co/LXPMdcQM/Paid-Text-Temaplate4.png"
     }
   ]
 }
